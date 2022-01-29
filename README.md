@@ -28,6 +28,8 @@ python3 index.py
 __For get a month of a year.__
 * /year/month
 
+The month is a numeric values as 1, 2, 3 or January, February, December, etc.
+
 -------------------------------
 
 __For get a year complete.__

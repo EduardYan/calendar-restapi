@@ -3,18 +3,14 @@ This file have the routes
 for use in the server.
 """
 
-from calendar import month_name
-from crypt import methods
 from flask import Blueprint, jsonify
 from helpers.utils import (
   MonthInvalid,
   YearInvalid,
   get_calendar,
-  get_holidays,
   validate_month_name,
-  get_holidays
+  get_holidays,
 )
-
 from messages.errors import YEAR_INVALID, MONTH_INVALID
 
 # routes
@@ -29,6 +25,7 @@ def home(year, month):
         # getting the calendar
         calendar = get_calendar(year, month)
         holidays = get_holidays(month)
+        print(holidays)
 
         # return the json
         return jsonify({
@@ -48,17 +45,19 @@ def home(year, month):
           'year': year,
           'month': month,
           'monthName': month_name,
-          'holidays': holidays,
-          'all': calendar
+          'all': calendar,
+          'holidays': holidays
         })
     else:
       # getting the calendar
       calendar = get_calendar(year)
+      holidays = get_holidays('all')
 
       return jsonify({
         'year': year,
         'month': month,
-        'all': calendar
+        'all': calendar,
+        'holidays': holidays
       })
 
 
@@ -74,7 +73,7 @@ def home(year, month):
 
 
 @calendars.route('/get-holidays/<month>', methods = ['GET'])
-def get_holidays(month):
+def get_holidays_route(month):
   """
   Route for get the holidays of the month
   passed for parameter.

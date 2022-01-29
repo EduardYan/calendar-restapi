@@ -100,7 +100,17 @@ def get_holidays(month:str) -> list:
   of the month passed for parameter.
   """
 
-  for holiday in HOLIDAYS:
-    # validating for name and number of the month
-    if month == holiday.month_name or month == holiday.month_number:
-      return [holiday.name]
+  if month != 'all':
+    for holiday in HOLIDAYS:
+      # validating for name and number of the month
+      if month == holiday.month_name or month == holiday.month_number:
+        return [holiday.name]
+
+  else:
+    # return alls the holidays
+    return [
+      {
+        'month': holiday.month_name,'day': holiday.day, 'name': holiday.name
+      }
+      for holiday in HOLIDAYS
+      ]
