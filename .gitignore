@@ -1,4 +1,3 @@
-# ignores
 env
 .vscode
 __pycache__
