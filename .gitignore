@@ -1,4 +1,4 @@
-# importants ignores
-/env
-/.vscode
+# ignores
+env
+.vscode
 __pycache__
