@@ -1,12 +1,12 @@
-# Calendars Restapi.
+# Calendar Restapi.
 
 __This is a retapi with python-flask, for get calendars of year, months and holidays of months.__
 
 ## Installation.
 
 ```bash
-git clone https://github.com/EduardYan/calendars-restapi.git
-cd calendars-restapi/
+git clone https://github.com/EduardYan/calendar-restapi.git
+cd calendar-restapi/
 ```
 
 ### Dependencies.
