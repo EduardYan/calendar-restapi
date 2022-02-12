@@ -1,4 +1,8 @@
-# some ignores
+# virtual enviroment
 env
+
+# cache from python
 __pycache__
+
+# vscode config
 .vscode
